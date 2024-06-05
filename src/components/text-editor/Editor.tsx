@@ -23,6 +23,7 @@ import {handleImageDrop} from "./extensions/image/drop-image.ts";
 import {handleImagePaste} from "./extensions/image/paste-image.ts";
 import {TextAlign} from "@tiptap/extension-text-align";
 import Typography from '@tiptap/extension-typography'
+import {FontFamily} from "@tiptap/extension-font-family";
 
 const extensions = [
     StarterKit.configure({
@@ -41,6 +42,9 @@ const extensions = [
     Typography.configure({
         superscriptTwo: false,
         superscriptThree: false,
+    }),
+    FontFamily.configure({
+        types: ['textStyle'],
     }),
     Color.configure({types: [TextStyle.name, ListItem.name]}),
     TextStyle.configure({}),

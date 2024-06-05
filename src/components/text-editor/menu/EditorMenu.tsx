@@ -12,6 +12,7 @@ import {EditorMenuSubSup} from "./items/EditorMenuSubSup.tsx";
 import {EditorMenuInsertImage} from "./items/EditorMenuInsertImage.tsx";
 import {EditorMenuAlign} from "./items/EditorMenuAlign.tsx";
 import {EditorMenuContext} from "./EditorMenuContext.tsx";
+import {EditorMenuFontFamily} from "./items/EditorMenuFontFamily.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -25,6 +26,8 @@ export const MenuBar = () => {
                 <EditorMenuUndoRedo/>
 
                 <EditorMenuFontStyles/>
+
+                <EditorMenuFontFamily/>
 
                 <EditorMenuAlign/>
 

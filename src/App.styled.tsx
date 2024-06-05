@@ -58,6 +58,10 @@ export const StyledExample = styled('div')`
     float: none;
     position: relative;
 
+    p {
+        white-space: pre;
+    }
+
     p > img {
         float: none;
         display: flex;

@@ -2,7 +2,6 @@ import {useCurrentEditor} from '@tiptap/react'
 import {StyledEditorMenuContainer} from "../Editor.styled.tsx";
 import {EditorMenuUndoRedo} from "./items/EditorMenuUndoRedo.tsx";
 import {EditorMenuFontStyles} from "./items/EditorMenuFontStyles.tsx";
-import {EditorMenuResetStyles} from "./items/EditorMenuResetStyles.tsx";
 import {EditorMenuLists} from "./items/EditorMenuLists.tsx";
 import {EditorMenuLinks} from "./items/EditorMenuLinks.tsx";
 import {EditorMenuQuotesHR} from "./items/EditorMenuQuotesHR.tsx";
@@ -34,8 +33,6 @@ export const MenuBar = () => {
                 <EditorMenuAlign/>
 
                 <EditorMenuSubSup/>
-
-                <EditorMenuResetStyles/>
 
                 <EditorMenuLists/>
 

@@ -43,6 +43,7 @@ export const StyledCode = styled('div')`
     text-align: left;
     width: 100%;
     overflow: auto;
+
     pre {
         width: 100%;
         max-width: 100%;

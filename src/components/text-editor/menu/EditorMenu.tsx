@@ -3,7 +3,6 @@ import {StyledEditorMenuContainer} from "../Editor.styled.tsx";
 import {EditorMenuUndoRedo} from "./items/EditorMenuUndoRedo.tsx";
 import {EditorMenuFontStyles} from "./items/EditorMenuFontStyles.tsx";
 import {EditorMenuResetStyles} from "./items/EditorMenuResetStyles.tsx";
-import {EditorMenuHeadings} from "./items/EditorMenuHeadings.tsx";
 import {EditorMenuLists} from "./items/EditorMenuLists.tsx";
 import {EditorMenuLinks} from "./items/EditorMenuLinks.tsx";
 import {EditorMenuQuotesHR} from "./items/EditorMenuQuotesHR.tsx";
@@ -13,6 +12,7 @@ import {EditorMenuInsertImage} from "./items/EditorMenuInsertImage.tsx";
 import {EditorMenuAlign} from "./items/EditorMenuAlign.tsx";
 import {EditorMenuContext} from "./EditorMenuContext.tsx";
 import {EditorMenuFontFamily} from "./items/EditorMenuFontFamily.tsx";
+import {EditorMenuTextStyles} from "./items/EditorMenuTextStyles.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -29,13 +29,13 @@ export const MenuBar = () => {
 
                 <EditorMenuFontFamily/>
 
+                <EditorMenuTextStyles/>
+
                 <EditorMenuAlign/>
 
                 <EditorMenuSubSup/>
 
                 <EditorMenuResetStyles/>
-
-                <EditorMenuHeadings/>
 
                 <EditorMenuLists/>
 

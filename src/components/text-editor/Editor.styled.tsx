@@ -11,24 +11,36 @@ export const StyledEditor = styled(Box)`
     display: flex;
     flex-flow: column nowrap;
     line-height: 1;
+    position: relative;
 
     div[contenteditable = true] {
         padding: 6px 12px;
+        position: static;
     }
 
     .is-editor-empty:first-child::before {
-        color: #adb5bd;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: ${({theme}) => theme.palette.text.disabled};
+        opacity: .7;
+        font-size: 14px;
         content: attr(data-placeholder);
-        float: left;
-        height: 0;
-        pointer-events: none;
+        transition: all .3s ease-in-out;
+    }
+
+    div[contenteditable = true]:focus-within {
+        .is-editor-empty:first-child::before {
+            opacity: 0;
+        }
     }
 `
 
 export const StyledEditorMenuContainer = styled(Box)`
     background-color: #f2f2f2;
     gap: 4px;
-    padding: 4px 0;
+    padding: 4px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -112,6 +124,7 @@ export const StyledMenuButton = styled(Button)`
             text-align: left;
             display: block;
             padding-right: 16px;
+            padding-left: 2px;
         }
 
         span {

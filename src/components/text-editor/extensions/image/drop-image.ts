@@ -10,10 +10,13 @@ export const handleImageDrop = (view: EditorView, event: DragEvent, _: Slice, mo
         return false
     }
     const files = event.dataTransfer.files
+    let processed = false
+
     if (files && files.length > 0) {
         for (let i = 0; i < files.length; i++) {
             processImage(view, files[i], event.clientX, event.clientY)
+            processed = true
         }
     }
-    return true
+    return processed
 }

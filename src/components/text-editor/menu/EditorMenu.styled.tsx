@@ -55,7 +55,7 @@ export const StyledEditorMenuContainer = styled(Box)`
 `
 
 export const StyledEditorMenuGroup = styled(ButtonGroup)`
-    margin-right: ${({theme}) => theme.spacing(1)};
+    margin-right: ${({theme}) => theme.spacing(.5)};
     display: flex;
     flex-flow: row wrap;
 

@@ -12,6 +12,7 @@ import {EditorMenuFontFamily} from "./items/EditorMenuFontFamily.tsx";
 import {EditorMenuTextStyles} from "./items/EditorMenuTextStyles.tsx";
 import {EditorMenuAdd} from "./items/insert/EditorMenuAdd.tsx";
 import {StyledEditorMenuContainer} from "./EditorMenu.styled.tsx";
+import {EditorMenuFontSize} from "./items/EditorMenuFontSize.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -29,6 +30,8 @@ export const MenuBar = () => {
                 <EditorMenuFontFamily/>
 
                 <EditorMenuTextStyles/>
+
+                <EditorMenuFontSize/>
 
                 <EditorMenuAlign/>
 

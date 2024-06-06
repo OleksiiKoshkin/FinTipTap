@@ -23,6 +23,7 @@ import {handleImagePaste} from "./extensions/image/paste-image.ts";
 import {TextAlign} from "@tiptap/extension-text-align";
 import Typography from '@tiptap/extension-typography'
 import {FontFamily} from "@tiptap/extension-font-family";
+import {TextStyleExtended} from "./extensions/font-size/FontSize.ts";
 
 const extensions = [
     StarterKit.configure({
@@ -46,7 +47,7 @@ const extensions = [
         types: ['textStyle'],
     }),
     Color.configure({types: [TextStyle.name, ListItem.name]}),
-    TextStyle.configure({}),
+    // TextStyle.configure({}),
     TextAlign.configure({
         types: ['heading', 'paragraph'],
     }),
@@ -70,6 +71,7 @@ const extensions = [
             target: '_blank',
         },
     }),
+    TextStyleExtended
 ]
 
 export const TextEditor = ({text, setText}: { text: string, setText: (text: string) => void }) => {

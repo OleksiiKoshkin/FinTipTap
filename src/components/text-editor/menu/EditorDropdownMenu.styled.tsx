@@ -1,17 +1,25 @@
 import {alpha, Button, Menu, MenuProps, styled} from "@mui/material";
 
+function getButtonSize(iconOnly?: boolean, short?: boolean): string {
+    return iconOnly
+        ? '40px'
+        : short
+            ? '50px'
+            : '100px'
+}
+
 export const StyledMenuButton = styled(Button, {
-    shouldForwardProp: (prop) => prop !== "iconOnly"
-})<{ iconOnly?: boolean }>`
-    margin-right: ${({theme}) => theme.spacing(1)};
+    shouldForwardProp: (prop) => prop !== "iconOnly" && prop !== "short"
+})<{ iconOnly?: boolean, short?: boolean }>`
+    margin-right: ${({theme}) => theme.spacing(.5)};
 
     &.MuiButtonBase-root {
         border: none;
         padding: 2px 6px;
         text-transform: none;
-        min-width: ${({iconOnly}) => iconOnly ? '40px' : '100px'};
-        max-width: ${({iconOnly}) => iconOnly ? '40px' : '100px'};
-        width: ${({iconOnly}) => iconOnly ? '40px' : '100px'};
+        min-width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
+        max-width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
+        width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
         justify-content: space-between;
         overflow: hidden;
         border-radius: 4px;
@@ -39,11 +47,11 @@ export const StyledMenu = styled((props: MenuProps) => (
         elevation={0}
         anchorOrigin={{
             vertical: 'bottom',
-            horizontal: 'right',
+            horizontal: 'left',
         }}
         transformOrigin={{
             vertical: 'top',
-            horizontal: 'right',
+            horizontal: 'left',
         }}
         {...props}
     />

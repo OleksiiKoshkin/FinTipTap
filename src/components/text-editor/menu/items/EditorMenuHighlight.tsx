@@ -58,6 +58,8 @@ export const EditorMenuHighlight: React.FC = () => {
         return null;
     }
 
+    const currentColor = availableColors.find((color) => editor.isActive('highlight', {color})) || 'transparent'
+
     return (
         <>
             <StyledMenuButton
@@ -66,7 +68,8 @@ export const EditorMenuHighlight: React.FC = () => {
                 iconOnly={true}
                 endIcon={<KeyboardArrowDownOutlinedIcon/>}
             >
-                <DriveFileRenameOutlineOutlinedIcon/>
+                <DriveFileRenameOutlineOutlinedIcon
+                    sx={{background: currentColor, borderRadius: '50%', padding: '2px'}}/>
             </StyledMenuButton>
             <StyledMenu
                 anchorEl={anchorEl}

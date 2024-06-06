@@ -187,7 +187,8 @@ export const StyledMultiContainer1 = styled('div')`
     grid-column-gap: 16px;
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 400px;
-    min-width: 90vw;
+    width: 90vw;
+    max-width: 1300px;
 `
 
 export const StyledMultiContainer2 = styled('div')`
@@ -196,6 +197,8 @@ export const StyledMultiContainer2 = styled('div')`
     margin: 0 auto;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 300px;
+    width: 90vw;
+    max-width: 1300px;
 `
 
 export const StyledMultiContainer3 = styled('div')`
@@ -204,4 +207,6 @@ export const StyledMultiContainer3 = styled('div')`
     grid-column-gap: 16px;
     grid-template-columns: 3fr 2fr 3fr;
     grid-template-rows: 200px;
+    width: 90vw;
+    max-width: 1300px;
 `

@@ -13,12 +13,11 @@ import {Subscript} from "@tiptap/extension-subscript";
 import {Superscript} from "@tiptap/extension-superscript";
 import {TaskList} from "@tiptap/extension-task-list";
 import {TaskItem} from "@tiptap/extension-task-item";
-import {Image} from "@tiptap/extension-image";
 
 
 // https://github.com/bae-sh/tiptap-extension-resize-image/tree/main
 //import {ImageResize} from "tiptap-extension-resize-image";
-import {ImageResize} from "./extensions/image/image-resize.ts";
+import {ImageResize} from "./extensions/image/ImageResize.ts";
 import {handleImageDrop} from "./extensions/image/drop-image.ts";
 import {handleImagePaste} from "./extensions/image/paste-image.ts";
 import {TextAlign} from "@tiptap/extension-text-align";
@@ -61,11 +60,7 @@ const extensions = [
     TaskItem.configure({
         nested: true,
     }),
-    ImageResize, // @todo: console warning
-    Image.configure({
-        allowBase64: true,
-        inline: true,
-    }),
+    ImageResize,
     Link.configure({
         linkOnPaste: true,
         autolink: false,

@@ -1,6 +1,13 @@
 import Image from '@tiptap/extension-image';
 
 export const ImageResize = Image.extend({
+    addOptions() {
+        return {
+            inline: true,
+            allowBase64: true,
+            HTMLAttributes: {}
+        }
+    },
     addAttributes() {
         return {
             src: {
@@ -101,7 +108,7 @@ export const ImageResize = Image.extend({
                     view.dispatch(view.state.tr.setNodeMarkup(getPos(), null, newAttrs));
                 }
             };
-            const paintPositionContoller = () => {
+            const paintPositionController = () => {
                 const $postionController = document.createElement('div');
 
                 const $leftController = document.createElement('img');
@@ -201,7 +208,7 @@ export const ImageResize = Image.extend({
                     }
                 }
 
-                paintPositionContoller();
+                paintPositionController();
 
                 $container.setAttribute(
                     'style',

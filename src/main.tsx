@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         element: <HomePage/>,
     },
     {
-        path: "FinTipTap/dist/home",
+        path: "/FinTipTap/dist/home",
         element: <HomePage/>,
     },
     {

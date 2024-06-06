@@ -5,6 +5,7 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import {StyledMenu, StyledMenuButton} from "../../EditorDropdownMenu.styled.tsx";
 import {InsertImage} from "./InsertImage.tsx";
 import {InsertHR} from "./InsertHR.tsx";
+import {InsertTable} from "./InsertTable.tsx";
 
 export type InsertMenuItemProps = {
     onExecute: () => void
@@ -41,8 +42,13 @@ export const EditorMenuAdd: React.FC = () => {
                 <MenuItem disableRipple>
                     <InsertImage onExecute={handleClose}/>
                 </MenuItem>
+
                 <MenuItem disableRipple>
                     <InsertHR onExecute={handleClose}/>
+                </MenuItem>
+
+                <MenuItem disableRipple>
+                    <InsertTable onExecute={handleClose}/>
                 </MenuItem>
             </StyledMenu>
 

@@ -24,6 +24,10 @@ import {TextAlign} from "@tiptap/extension-text-align";
 import Typography from '@tiptap/extension-typography'
 import {FontFamily} from "@tiptap/extension-font-family";
 import {TextStyleExtended} from "./extensions/font-size/FontSize.ts";
+import {TableRow} from "@tiptap/extension-table-row";
+import {Table} from "@tiptap/extension-table";
+import {TableHeader} from "@tiptap/extension-table-header";
+import {TableCell} from "@tiptap/extension-table-cell";
 
 const extensions = [
     StarterKit.configure({
@@ -71,7 +75,19 @@ const extensions = [
             target: '_blank',
         },
     }),
-    TextStyleExtended
+    TextStyleExtended,
+    Table.configure({
+        resizable: true,
+        HTMLAttributes: {
+            class: 'editor-table',
+        },
+    }),
+    TableRow,
+    TableHeader,
+    // Default TableCell
+    TableCell,
+    // Custom TableCell with backgroundColor attribute
+    // CustomTableCell,
 ]
 
 export const TextEditor = ({text, setText}: { text: string, setText: (text: string) => void }) => {

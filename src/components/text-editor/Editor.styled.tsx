@@ -13,6 +13,20 @@ export const StyledEditor = styled(Box)`
     line-height: 1;
     position: relative;
 
+    .MuiButtonBase-root:focus {
+        focus-ring: none;
+        outline: none;
+    }
+
+    .tableWrapper {
+        overflow-x: auto;
+    }
+
+    .resize-cursor {
+        cursor: ew-resize;
+        cursor: col-resize;
+    }
+
     div[contenteditable = true] {
         padding: 6px 12px;
         position: static;

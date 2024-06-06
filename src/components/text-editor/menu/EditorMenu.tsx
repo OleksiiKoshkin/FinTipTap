@@ -14,6 +14,7 @@ import {EditorMenuAdd} from "./items/insert/EditorMenuAdd.tsx";
 import {StyledEditorMenuContainer} from "./EditorMenu.styled.tsx";
 import {EditorMenuFontSize} from "./items/EditorMenuFontSize.tsx";
 import {EditorMenuTable} from "./items/table/EditorMenuTable.tsx";
+import {EditorMenuHighlight} from "./items/EditorMenuHighlight.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -35,6 +36,8 @@ export const MenuBar = () => {
                 <EditorMenuTextStyles/>
 
                 <EditorMenuFontSize/>
+
+                <EditorMenuHighlight/>
 
                 <EditorMenuPickColor/>
 

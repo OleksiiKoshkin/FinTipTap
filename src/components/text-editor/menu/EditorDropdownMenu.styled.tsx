@@ -61,9 +61,8 @@ export const StyledMenu = styled((props: MenuProps) => (
     .MuiPaper-root {
         border-radius: 6px;
         margin-top: ${({theme}) => theme.spacing(1)};
-        min-width: 180px;
         color: ${({theme}) => theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300]};
-        box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(0, 0, 0, 0.05) 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 10 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+        box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(0, 0, 0, 0.05) 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
         .MuiMenu-list {
             padding: 4px 0;

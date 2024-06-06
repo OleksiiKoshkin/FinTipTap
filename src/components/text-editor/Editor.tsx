@@ -13,13 +13,6 @@ import {Subscript} from "@tiptap/extension-subscript";
 import {Superscript} from "@tiptap/extension-superscript";
 import {TaskList} from "@tiptap/extension-task-list";
 import {TaskItem} from "@tiptap/extension-task-item";
-
-
-// https://github.com/bae-sh/tiptap-extension-resize-image/tree/main
-//import {ImageResize} from "tiptap-extension-resize-image";
-import {ImageResize} from "./extensions/image/ImageResize.ts";
-import {handleImageDrop} from "./extensions/image/drop-image.ts";
-import {handleImagePaste} from "./extensions/image/paste-image.ts";
 import {TextAlign} from "@tiptap/extension-text-align";
 import Typography from '@tiptap/extension-typography'
 import {FontFamily} from "@tiptap/extension-font-family";
@@ -28,16 +21,23 @@ import {TableRow} from "@tiptap/extension-table-row";
 import {Table} from "@tiptap/extension-table";
 import {TableHeader} from "@tiptap/extension-table-header";
 import {TableCell} from "@tiptap/extension-table-cell";
+import Highlight from '@tiptap/extension-highlight'
+
+// https://github.com/bae-sh/tiptap-extension-resize-image/tree/main
+//import {ImageResize} from "tiptap-extension-resize-image";
+import {ImageResize} from "./extensions/image/ImageResize.ts";
+import {handleImageDrop} from "./extensions/image/drop-image.ts";
+import {handleImagePaste} from "./extensions/image/paste-image.ts";
 
 const extensions = [
     StarterKit.configure({
         bulletList: {
             keepMarks: true,
-            keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+            keepAttributes: false,
         },
         orderedList: {
             keepMarks: true,
-            keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+            keepAttributes: false,
         },
         dropcursor: {
             color: '#ffae00',
@@ -88,17 +88,10 @@ const extensions = [
     TableCell,
     // Custom TableCell with backgroundColor attribute
     // CustomTableCell,
+    Highlight.configure({ multicolor: true })
 ]
 
 export const TextEditor = ({text, setText}: { text: string, setText: (text: string) => void }) => {
-    // const editor = useEditor({
-    //     extensions,
-    //     content: text,
-    //     onUpdate({editor}) {
-    //         setText(editor.getHTML());
-    //     }
-    // })
-    //
     return <StyledEditor>
         <EditorProvider
             extensions={extensions}

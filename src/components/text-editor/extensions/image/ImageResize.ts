@@ -97,7 +97,7 @@ export const ImageResize = Image.extend({
             const $wrapper = document.createElement('div');
             const $container = document.createElement('div');
             const $img = document.createElement('img');
-            const iconStyle = 'width: 20px; height: 20px; cursor: pointer;';
+            const iconStyle = 'width: 18px; height: 18px; cursor: pointer;';
 
             const dispatchNodeView = () => {
                 if (typeof getPos === 'function') {
@@ -109,7 +109,7 @@ export const ImageResize = Image.extend({
                 }
             };
             const paintPositionController = () => {
-                const $postionController = document.createElement('div');
+                const $positionController = document.createElement('div');
 
                 const $leftController = document.createElement('img');
                 const $centerController = document.createElement('img');
@@ -127,15 +127,14 @@ export const ImageResize = Image.extend({
                     e.target.style.opacity = 1;
                 };
 
-                $postionController.setAttribute(
+                $positionController.setAttribute(
                     'style',
-                    'position: absolute; top: 0%; left: 50%; width: 80px; height: 22px; z-index: 999; background-color: rgba(255, 255, 255, 0.7); border-radius: 4px; border: 2px solid #6C6C6C; cursor: pointer; transform: translate(-50%, -50%); display: flex; justify-content: space-between; align-items: center; padding: 0 6px;',
+                    'position: absolute; top: 0%; left: 50%; width: 80px; height: 20px; z-index: 999; background-color: rgba(255, 255, 255, 0.7); border-radius: 6px; border: 1px solid rgba(0,0,0,.5); cursor: pointer; transform: translate(-50%, -50%); display: flex; justify-content: space-between; align-items: center; padding: 0 6px;',
                 );
 
-                // @todo: replace with SVG data:base64
                 $leftController.setAttribute(
                     'src',
-                    'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_left/default/20px.svg',
+                    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PHBhdGggZD0iTTQsMjJIMlYyaDJWMjJ6IE0yMiw3SDZ2M2gxNlY3eiBNMTYsMTRINnYzaDEwVjE0eiIvPjwvc3ZnPg=='
                 );
                 $leftController.setAttribute('style', iconStyle);
                 $leftController.addEventListener('mouseover', controllerMouseOver);
@@ -143,7 +142,7 @@ export const ImageResize = Image.extend({
 
                 $centerController.setAttribute(
                     'src',
-                    'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_center/default/20px.svg',
+                    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PHBvbHlnb24gcG9pbnRzPSIxMSwyIDEzLDIgMTMsNyAyMSw3IDIxLDEwIDEzLDEwIDEzLDE0IDE4LDE0IDE4LDE3IDEzLDE3IDEzLDIyIDExLDIyIDExLDE3IDYsMTcgNiwxNCAxMSwxNCAxMSwxMCAzLDEwIDMsNyAxMSw3Ii8+PC9zdmc+',
                 );
                 $centerController.setAttribute('style', iconStyle);
                 $centerController.addEventListener('mouseover', controllerMouseOver);
@@ -151,7 +150,7 @@ export const ImageResize = Image.extend({
 
                 $rightController.setAttribute(
                     'src',
-                    'https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/format_align_right/default/20px.svg',
+                    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCI+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgd2lkdGg9IjI0Ii8+PHBhdGggZD0iTTIwLDJoMnYyMGgtMlYyeiBNMiwxMGgxNlY3SDJWMTB6IE04LDE3aDEwdi0zSDhWMTd6Ii8+PC9zdmc+',
                 );
                 $rightController.setAttribute('style', iconStyle);
                 $rightController.addEventListener('mouseover', controllerMouseOver);
@@ -170,11 +169,11 @@ export const ImageResize = Image.extend({
                     dispatchNodeView();
                 });
 
-                $postionController.appendChild($leftController);
-                $postionController.appendChild($centerController);
-                $postionController.appendChild($rightController);
+                $positionController.appendChild($leftController);
+                $positionController.appendChild($centerController);
+                $positionController.appendChild($rightController);
 
-                $container.appendChild($postionController);
+                $container.appendChild($positionController);
             };
 
             $wrapper.setAttribute('style', `display: flex;`);
@@ -212,14 +211,14 @@ export const ImageResize = Image.extend({
 
                 $container.setAttribute(
                     'style',
-                    `position: relative; border: 1px dashed #6C6C6C; ${style} cursor: pointer;`,
+                    `position: relative; border: 1px dashed #ffa600; ${style} cursor: pointer;`,
                 );
 
                 Array.from({length: 4}, (_, index) => {
                     const $dot = document.createElement('div');
                     $dot.setAttribute(
                         'style',
-                        `position: absolute; width: 9px; height: 9px; border: 1.5px solid #6C6C6C; border-radius: 50%; ${dotsPosition[index]}`,
+                        `position: absolute; width: 9px; background: #ffa600; height: 9px; border: 1.5px solid #6C6C6C; border-radius: 50%; ${dotsPosition[index]}`,
                     );
 
                     $dot.addEventListener('mousedown', e => {

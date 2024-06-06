@@ -80,7 +80,8 @@ export const EditorMenuFontFamily: React.FC = () => {
                     </MenuItem>
                 ))}
 
-                <Divider sx={{my: 0.5}}/>
+                <Divider/>
+
                 <MenuItem
                     onClick={handleReset} disableRipple>
                     <SelectedFontIcon editor={editor} family={undefined} isDefault={isDefault}/>

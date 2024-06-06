@@ -24,6 +24,7 @@ export const EditorMenuFontStyles: React.FC = () => {
                 }>
                 <FormatBoldOutlinedIcon/>
             </StyledButton>
+
             <StyledButton
                 onClick={() => editor.chain().focus().toggleItalic().run()}
                 variant={editor.isActive('italic') ? 'contained' : 'outlined'}
@@ -36,6 +37,7 @@ export const EditorMenuFontStyles: React.FC = () => {
                 }>
                 <FormatItalicOutlinedIcon/>
             </StyledButton>
+
             <StyledButton
                 onClick={() => editor.chain().focus().toggleUnderline().run()}
                 variant={editor.isActive('underline') ? 'contained' : 'outlined'}

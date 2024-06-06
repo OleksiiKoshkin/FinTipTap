@@ -13,6 +13,7 @@ import {EditorMenuTextStyles} from "./items/EditorMenuTextStyles.tsx";
 import {EditorMenuAdd} from "./items/insert/EditorMenuAdd.tsx";
 import {StyledEditorMenuContainer} from "./EditorMenu.styled.tsx";
 import {EditorMenuFontSize} from "./items/EditorMenuFontSize.tsx";
+import {EditorMenuTable} from "./items/table/EditorMenuTable.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -35,18 +36,19 @@ export const MenuBar = () => {
 
                 <EditorMenuFontSize/>
 
+                <EditorMenuPickColor/>
+
                 <EditorMenuAlign/>
+
+                <EditorMenuTable/>
+
+                <EditorMenuLists/>
+
+                <EditorMenuLinks/>
 
                 <EditorMenuSubSup/>
 
                 <EditorMenuQuote/>
-
-                <EditorMenuLists/>
-
-
-                <EditorMenuLinks/>
-
-                <EditorMenuPickColor/>
 
                 {/*<button*/}
                 {/*    onClick={() => editor.chain().focus().setColor('#958DF1').run()}*/}

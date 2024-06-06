@@ -63,7 +63,7 @@ export const StyledMenu = styled((props: MenuProps) => (
         margin-top: ${({theme}) => theme.spacing(1)};
         min-width: 180px;
         color: ${({theme}) => theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300]};
-        box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(0, 0, 0, 0.05) 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 10 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
         .MuiMenu-list {
             padding: 4px 0;
@@ -73,13 +73,15 @@ export const StyledMenu = styled((props: MenuProps) => (
             height: 1px;
             background-color: ${({theme}) => theme.palette.divider};
             border: none;
+            margin: ${({theme}) => theme.spacing(0.25)};
         }
 
         .MuiMenuItem-root {
-            font-size: 14px;
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
+            height: 30px;
+            font-size: 13px;
 
             label {
                 display: flex;

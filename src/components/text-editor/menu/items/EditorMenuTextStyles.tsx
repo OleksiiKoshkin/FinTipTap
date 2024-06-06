@@ -84,14 +84,15 @@ export const EditorMenuTextStyles: React.FC = () => {
                         {style.title}
                     </MenuItem>
                 ))}
-                <Divider sx={{my: 0.5}}/>
+
+                <Divider/>
+
                 <MenuItem
                     onClick={handleReset} disableRipple>
                     <SelectedTextStyleIcon editor={editor} name={undefined} isDefault={isDefault}/>
                     Default paragraph
                 </MenuItem>
             </StyledMenu>
-
         </>
     )
 }

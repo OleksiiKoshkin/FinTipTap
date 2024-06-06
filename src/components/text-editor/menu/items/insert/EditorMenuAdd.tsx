@@ -4,8 +4,9 @@ import {MenuItem} from "@mui/material";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import {StyledMenu, StyledMenuButton} from "../../EditorDropdownMenu.styled.tsx";
 import {InsertImage} from "./InsertImage.tsx";
-import {InsertHR} from "./InsertHR.tsx";
-import {InsertTable} from "./InsertTable.tsx";
+import {EditorActionMenuItem} from "../abstract-action/EditorActionMenuItem.tsx";
+import HorizontalRuleOutlinedIcon from "@mui/icons-material/HorizontalRuleOutlined";
+import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
 
 export type InsertMenuItemProps = {
     onExecute: () => void
@@ -43,15 +44,21 @@ export const EditorMenuAdd: React.FC = () => {
                     <InsertImage onExecute={handleClose}/>
                 </MenuItem>
 
-                <MenuItem disableRipple>
-                    <InsertHR onExecute={handleClose}/>
-                </MenuItem>
+                <EditorActionMenuItem
+                    onExecute={handleClose}
+                    actionName={'setHorizontalRule'}>
+                    <HorizontalRuleOutlinedIcon/>
+                    Insert horizontal rule
+                </EditorActionMenuItem>
 
-                <MenuItem disableRipple>
-                    <InsertTable onExecute={handleClose}/>
-                </MenuItem>
+                <EditorActionMenuItem
+                    onExecute={handleClose}
+                    actionName={'insertTable'}
+                    params={{rows: 3, cols: 3, withHeaderRow: true}}>
+                    <TableChartOutlinedIcon/>
+                    Insert table
+                </EditorActionMenuItem>
             </StyledMenu>
-
         </>
     )
 }

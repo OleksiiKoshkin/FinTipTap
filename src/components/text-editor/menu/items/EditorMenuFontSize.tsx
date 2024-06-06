@@ -6,8 +6,8 @@ import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import {Editor} from "@tiptap/react";
 import {StyledMenu, StyledMenuButton} from "../EditorDropdownMenu.styled.tsx";
 
+// can be "small" | "medium", etc.
 const availableFontSizes = [
-    {title: '8', size: '8'}, // can be "small" | "medium", etc.
     {title: '10', size: '10'},
     {title: '12', size: '12'},
     {title: '14', size: '14'},
@@ -94,7 +94,8 @@ export const EditorMenuFontSize: React.FC = () => {
                     </MenuItem>
                 ))}
 
-                <Divider sx={{my: 0.5}}/>
+                <Divider/>
+
                 <MenuItem
                     onClick={handleReset} disableRipple>
                     <SelectedFontSizeIcon editor={editor} size={undefined} isDefault={isDefault}/>

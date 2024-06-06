@@ -62,8 +62,13 @@ export const StyledExample = styled('div')`
     p {
         white-space: pre;
     }
+    p:has(img) {
+        width: 100%;
+        float: none;
+        display: block;
+    }
 
-    p > img {
+    p:has(img) > img {
         float: none;
         display: flex;
     }

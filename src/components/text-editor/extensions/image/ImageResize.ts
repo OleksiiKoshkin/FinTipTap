@@ -108,6 +108,8 @@ export const ImageResize = Image.extend({
                     view.dispatch(view.state.tr.setNodeMarkup(getPos(), null, newAttrs));
                 }
             };
+            const selectedImageStyle = 'box-shadow: 0 0 0 1px #ffa600;';
+
             const paintPositionController = () => {
                 const $positionController = document.createElement('div');
 
@@ -190,10 +192,10 @@ export const ImageResize = Image.extend({
             if (!editable) return {dom: $img};
 
             const dotsPosition = [
-                'top: -4px; left: -4px; cursor: nwse-resize;',
-                'top: -4px; right: -4px; cursor: nesw-resize;',
-                'bottom: -4px; left: -4px; cursor: nesw-resize;',
-                'bottom: -4px; right: -4px; cursor: nwse-resize;',
+                'top: -6px; left: -6px; cursor: nwse-resize;',
+                'top: -6px; right: -6px; cursor: nesw-resize;',
+                'bottom: -6px; left: -6px; cursor: nesw-resize;',
+                'bottom: -6px; right: -6px; cursor: nwse-resize;',
             ];
 
             let isResizing = false;
@@ -211,7 +213,8 @@ export const ImageResize = Image.extend({
 
                 $container.setAttribute(
                     'style',
-                    `position: relative; border: 1px dashed #ffa600; ${style} cursor: pointer;`,
+                    `position: relative; ${selectedImageStyle} ${style} cursor: pointer;`,
+                    //`position: relative; border: 1px dashed #ffa600; ${style} cursor: pointer;`,
                 );
 
                 Array.from({length: 4}, (_, index) => {
@@ -266,7 +269,7 @@ export const ImageResize = Image.extend({
 
                 if (!isClickInside) {
                     const containerStyle = $container.getAttribute('style');
-                    const newStyle = containerStyle?.replace('border: 1px dashed #6C6C6C;', '');
+                    const newStyle = containerStyle?.replace(selectedImageStyle, '');
                     $container.setAttribute('style', newStyle as string);
 
                     if ($container.childElementCount > 3) {

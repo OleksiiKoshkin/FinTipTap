@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinTipTap Demo 1</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <title>FinTipTap Demo</title>
+    <style>
+        #bad-init {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<div id="bad-init">Use this link to open SPA</div>
+<script type="module" src="/src/main.tsx"></script>
+</body>
 </html>

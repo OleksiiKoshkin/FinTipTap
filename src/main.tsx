@@ -71,6 +71,10 @@ const theme = createTheme({
     }
 });
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+document.getElementById('bad-init').remove()
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>

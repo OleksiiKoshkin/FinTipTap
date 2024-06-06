@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         path: "/multi",
         element: <MultiPage/>,
     },
-]);
+], {basename: 'https://oleksiikoshkin.github.io/FinTipTap/dist/'});
 
 const theme = createTheme({
     palette: {

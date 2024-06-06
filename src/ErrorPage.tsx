@@ -9,9 +9,11 @@ export const ErrorPage: React.FC = () => {
 
     return (
         <>
-            <Alert variant="filled" severity="error" sx={{textAlign: 'left'}}>
+            <Alert variant="filled" severity="error" sx={{textAlign: 'left', marginBottom: 4}}>
                 <AlertTitle>Oops</AlertTitle>
+
                 <Typography>Sorry, an unexpected error has occurred.</Typography>
+
                 <div>
                     <i>{error.statusText || error.message}</i>
                 </div>

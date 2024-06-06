@@ -7,7 +7,7 @@ import {Editor} from "@tiptap/react";
 import {StyledMenu, StyledMenuButton} from "../EditorDropdownMenu.styled.tsx";
 
 const availableFontSizes = [
-    {title: '8', size: '8'},
+    {title: '8', size: '8'}, // can be "small" | "medium", etc.
     {title: '10', size: '10'},
     {title: '12', size: '12'},
     {title: '14', size: '14'},
@@ -24,6 +24,8 @@ const availableFontSizes = [
 ] as const
 
 type AvailableSizes = typeof availableFontSizes[number]["size"];
+
+const defaultFontSize = 16;
 
 const SelectedFontSizeIcon = ({editor, size, isDefault}: {
     editor: Editor,
@@ -66,7 +68,7 @@ export const EditorMenuFontSize: React.FC = () => {
     const fontName = availableFontSizes.find((fontSize) =>
         editor.isActive('textStyle', {fontSize: fontSize.size}))?.title
 
-    const isDefault = !fontName
+    const isDefault = !fontName || fontName === defaultFontSize.toString() // @todo: get default item, if title will differ
 
     return (
         <>
@@ -76,7 +78,7 @@ export const EditorMenuFontSize: React.FC = () => {
                 short={true}
                 endIcon={<KeyboardArrowDownOutlinedIcon/>}
             >
-                <label>{fontName || '-'}</label>
+                <label>{fontName || defaultFontSize}</label>
             </StyledMenuButton>
             <StyledMenu
                 anchorEl={anchorEl}

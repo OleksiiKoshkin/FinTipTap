@@ -6,6 +6,7 @@ import PlaylistAddCheckOutlinedIcon from "@mui/icons-material/PlaylistAddCheckOu
 import FormatIndentIncreaseOutlinedIcon from "@mui/icons-material/FormatIndentIncreaseOutlined";
 import FormatIndentDecreaseOutlinedIcon from "@mui/icons-material/FormatIndentDecreaseOutlined";
 import {EditorMenuContext} from "../EditorMenuContext.tsx";
+import {Box} from "@mui/material";
 
 export const EditorMenuLists: React.FC = () => {
     const {editor} = useContext(EditorMenuContext);
@@ -32,7 +33,7 @@ export const EditorMenuLists: React.FC = () => {
     if (!editor) return null;
 
     return (
-        <>
+        <Box sx={{display: 'flex', flexFlow: 'row nowrap'}}>
             <StyledEditorMenuGroup>
                 <StyledButton
                     onClick={() => editor.chain().focus().toggleBulletList().run()}
@@ -72,6 +73,6 @@ export const EditorMenuLists: React.FC = () => {
                 </StyledButton>
 
             </StyledEditorMenuGroup>
-        </>
+        </Box>
     )
 }

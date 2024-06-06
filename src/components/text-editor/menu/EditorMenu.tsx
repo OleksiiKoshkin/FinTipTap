@@ -27,6 +27,8 @@ export const MenuBar = () => {
 
                 <EditorMenuFontStyles/>
 
+                <EditorMenuAdd/>
+
                 <EditorMenuFontFamily/>
 
                 <EditorMenuTextStyles/>
@@ -41,10 +43,8 @@ export const MenuBar = () => {
 
                 <EditorMenuLists/>
 
-                <EditorMenuAdd/>
 
                 <EditorMenuLinks/>
-
 
                 <EditorMenuPickColor/>
 

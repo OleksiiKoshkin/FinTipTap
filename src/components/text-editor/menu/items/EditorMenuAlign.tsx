@@ -1,4 +1,3 @@
-import {StyledButton, StyledEditorMenuGroup} from "../../Editor.styled.tsx";
 import React, {useContext} from "react";
 
 import FormatAlignCenterOutlinedIcon from '@mui/icons-material/FormatAlignCenterOutlined';
@@ -6,6 +5,7 @@ import FormatAlignJustifyOutlinedIcon from '@mui/icons-material/FormatAlignJusti
 import FormatAlignLeftOutlinedIcon from '@mui/icons-material/FormatAlignLeftOutlined';
 import FormatAlignRightOutlinedIcon from '@mui/icons-material/FormatAlignRightOutlined';
 import {EditorMenuContext} from "../EditorMenuContext.tsx";
+import {StyledButton, StyledEditorMenuGroup} from "../EditorMenu.styled.tsx";
 
 export const EditorMenuAlign: React.FC = () => {
     const {editor} = useContext(EditorMenuContext);

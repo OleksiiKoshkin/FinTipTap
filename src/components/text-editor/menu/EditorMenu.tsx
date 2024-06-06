@@ -1,17 +1,17 @@
 import {useCurrentEditor} from '@tiptap/react'
-import {StyledEditorMenuContainer} from "../Editor.styled.tsx";
 import {EditorMenuUndoRedo} from "./items/EditorMenuUndoRedo.tsx";
 import {EditorMenuFontStyles} from "./items/EditorMenuFontStyles.tsx";
 import {EditorMenuLists} from "./items/EditorMenuLists.tsx";
 import {EditorMenuLinks} from "./items/EditorMenuLinks.tsx";
-import {EditorMenuQuotesHR} from "./items/EditorMenuQuotesHR.tsx";
+import {EditorMenuQuote} from "./items/EditorMenuQuote.tsx";
 import {EditorMenuPickColor} from "./items/EditorMenuPickColor.tsx";
 import {EditorMenuSubSup} from "./items/EditorMenuSubSup.tsx";
-import {EditorMenuInsertImage} from "./items/EditorMenuInsertImage.tsx";
 import {EditorMenuAlign} from "./items/EditorMenuAlign.tsx";
 import {EditorMenuContext} from "./EditorMenuContext.tsx";
 import {EditorMenuFontFamily} from "./items/EditorMenuFontFamily.tsx";
 import {EditorMenuTextStyles} from "./items/EditorMenuTextStyles.tsx";
+import {EditorMenuAdd} from "./items/insert/EditorMenuAdd.tsx";
+import {StyledEditorMenuContainer} from "./EditorMenu.styled.tsx";
 
 export const MenuBar = () => {
     const {editor} = useCurrentEditor()
@@ -34,13 +34,14 @@ export const MenuBar = () => {
 
                 <EditorMenuSubSup/>
 
+                <EditorMenuQuote/>
+
                 <EditorMenuLists/>
 
-                <EditorMenuInsertImage/>
+                <EditorMenuAdd/>
 
                 <EditorMenuLinks/>
 
-                <EditorMenuQuotesHR/>
 
                 <EditorMenuPickColor/>
 

@@ -1,4 +1,3 @@
-import {StyledMenu, StyledMenuButton} from "../../Editor.styled.tsx";
 import React, {useCallback, useContext} from "react";
 import {EditorMenuContext} from "../EditorMenuContext.tsx";
 import {Editor} from "@tiptap/react";
@@ -6,6 +5,7 @@ import {Level} from "@tiptap/extension-heading";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import {Divider, MenuItem} from "@mui/material";
+import {StyledMenu, StyledMenuButton} from "../EditorDropdownMenu.styled.tsx";
 
 const availableTextStyles = [
     {title: 'Title', name: 'heading', level: 1},
@@ -42,11 +42,9 @@ export const EditorMenuTextStyles: React.FC = () => {
 
     const {editor} = useContext(EditorMenuContext);
 
-    const handleStyle = useCallback((styleName: AvailableTextStyleNames, level: Level) => {
-        editor?.chain().focus().setFontFamily(styleName).run()
-        if (styleName === 'heading') {
-            editor?.chain().focus().toggleHeading({level}).run()
-        }
+    const handleStyle = useCallback((level: Level) => {
+        editor?.chain().focus().toggleHeading({level}).run()
+
         handleClose()
     }, [editor])
 
@@ -72,11 +70,8 @@ export const EditorMenuTextStyles: React.FC = () => {
             >
                 <label>{styleName || 'Default paragraph'}</label>
             </StyledMenuButton>
+
             <StyledMenu
-                id="demo-customized-menu"
-                MenuListProps={{
-                    'aria-labelledby': 'demo-customized-button',
-                }}
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
@@ -84,7 +79,7 @@ export const EditorMenuTextStyles: React.FC = () => {
                 {availableTextStyles.map((style) => (
                     <MenuItem
                         key={style.title}
-                        onClick={() => handleStyle(style.name, style.level)} disableRipple>
+                        onClick={() => handleStyle(style.level)} disableRipple>
                         <SelectedTextStyleIcon editor={editor} name={style.name} level={style.level}/>
                         {style.title}
                     </MenuItem>

@@ -1,4 +1,4 @@
-import {StyledButton, StyledEditorMenuGroup} from "../../Editor.styled.tsx";
+import {StyledButton, StyledEditorMenuGroup} from "../EditorMenu.styled.tsx";
 import React, {useCallback, useContext} from "react";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import LinkOffIcon from "@mui/icons-material/LinkOff";

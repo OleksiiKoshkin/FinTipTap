@@ -1,4 +1,4 @@
-import {StyledButton, StyledEditorMenuGroup} from "../../Editor.styled.tsx";
+import {StyledButton, StyledEditorMenuGroup} from "../EditorMenu.styled.tsx";
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import React, {useContext} from "react";

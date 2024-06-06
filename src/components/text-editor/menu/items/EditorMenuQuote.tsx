@@ -1,10 +1,9 @@
-import {StyledButton, StyledEditorMenuGroup} from "../../Editor.styled.tsx";
+import {StyledButton, StyledEditorMenuGroup} from "../EditorMenu.styled.tsx";
 import React, {useContext} from "react";
 import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
-import HorizontalRuleOutlinedIcon from "@mui/icons-material/HorizontalRuleOutlined";
 import {EditorMenuContext} from "../EditorMenuContext.tsx";
 
-export const EditorMenuQuotesHR: React.FC = () => {
+export const EditorMenuQuote: React.FC = () => {
     const {editor} = useContext(EditorMenuContext);
     if (!editor) return null;
 
@@ -15,11 +14,6 @@ export const EditorMenuQuotesHR: React.FC = () => {
                 variant={editor.isActive('blockquote') ? 'contained' : 'outlined'}>
                 <FormatQuoteOutlinedIcon/>
             </StyledButton>
-            <StyledButton
-                onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-                <HorizontalRuleOutlinedIcon/>
-            </StyledButton>
-
         </StyledEditorMenuGroup>
     )
 }

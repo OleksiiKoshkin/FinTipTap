@@ -1,4 +1,4 @@
-import {StyledButton, StyledEditorMenuGroup} from "../../Editor.styled.tsx";
+import {StyledButton, StyledEditorMenuGroup} from "../EditorMenu.styled.tsx";
 import React, {useContext} from "react";
 
 import SubscriptOutlinedIcon from '@mui/icons-material/SubscriptOutlined';

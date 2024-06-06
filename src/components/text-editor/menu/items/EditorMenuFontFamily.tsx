@@ -2,9 +2,9 @@ import React, {useCallback, useContext} from "react";
 import {EditorMenuContext} from "../EditorMenuContext.tsx";
 import {Divider, MenuItem} from "@mui/material";
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
-import {StyledMenu, StyledMenuButton} from "../../Editor.styled.tsx";
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import {Editor} from "@tiptap/react";
+import {StyledMenu, StyledMenuButton} from "../EditorDropdownMenu.styled.tsx";
 
 const availableFontFamily = [
     {title: 'Comic Sans MS', family: 'Comic Sans MS, Comic Sans'},
@@ -67,10 +67,6 @@ export const EditorMenuFontFamily: React.FC = () => {
                 <label>{fontName || 'Default font'}</label>
             </StyledMenuButton>
             <StyledMenu
-                id="demo-customized-menu"
-                MenuListProps={{
-                    'aria-labelledby': 'demo-customized-button',
-                }}
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}

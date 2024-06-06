@@ -1,82 +1,94 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: #333;
-  background-color: #fff;
+    color-scheme: light dark;
+    color: #333;
+    background-color: #fff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f8f8f8
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f8f8f8
 }
 
 div[contenteditable=true] {
-  border: none;
-  outline: none;
-  focus-ring: none;
+    border: none;
+    outline: none;
+    focus-ring: none;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 blockquote {
-  border-left: 4px solid #ffa600;
-  margin-left: 0;
-  border-radius: 6px;
-  padding: 2px 6px;
-  background-color: #f2f2f5;
-  line-height: 1;
+    width: 100%;
+    margin-left: 0;
+    padding: 2px 0;
+    text-indent: 1em;
+    background-color: rgba(0, 0, 128, 0.05);
+    line-height: 1;
+    position: relative;
+
+    &:after{
+        display: block;
+        position: absolute;
+        content: "\201D";
+        font-family: cursive, serif;
+        font-size: 2.5em;
+        top: 0;
+        left: -.6em;
+        color: #ffa600;
+    }
 }
 
 hr {
-  height: 4px;
-  border: none;
-  background-color: #ffa600;
+    height: 4px;
+    border: none;
+    background-color: #ffa600;
 }
 
 
 ul[data-type="taskList"] {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 
-  p {
-    margin: 0;
-  }
-
-  li {
-    display: flex;
-
-    > label {
-      flex: 0 0 auto;
-      margin-right: 0.5rem;
-      user-select: none;
+    p {
+        margin: 0;
     }
 
-    > div {
-      flex: 1 1 auto;
-    }
+    li {
+        display: flex;
 
-    ul li,
-    ol li {
-      display: list-item;
-    }
+        > label {
+            flex: 0 0 auto;
+            margin-right: 0.5rem;
+            user-select: none;
+        }
 
-    ul[data-type="taskList"] > li {
-      display: flex;
-      padding: 6px 0;
+        > div {
+            flex: 1 1 auto;
+        }
+
+        ul li,
+        ol li {
+            display: list-item;
+        }
+
+        ul[data-type="taskList"] > li {
+            display: flex;
+            padding: 6px 0;
+        }
     }
-  }
 }

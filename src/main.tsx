@@ -1,8 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import {HomePage} from './HomePage.tsx'
 import './index.css'
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, ThemeProvider, Typography} from "@mui/material";
+
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+
+import {ErrorPage} from "./ErrorPage.tsx";
+import {MultiPage} from "./MultiPage.tsx";
+import {ReplacePage} from "./ReplacePage.tsx";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <HomePage/>,
+        errorElement: <ErrorPage/>,
+    },
+    {
+        path: "/home",
+        element: <HomePage/>,
+    },
+    {
+        path: "/replace",
+        element: <ReplacePage/>,
+    },
+    {
+        path: "/multi",
+        element: <MultiPage/>,
+    },
+]);
 
 const theme = createTheme({
     palette: {
@@ -15,7 +41,10 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
-            <App/>
+            <Typography variant="h2" gutterBottom>
+                FinTipTap Editor Demo
+            </Typography>
+            <RouterProvider router={router}/>
         </ThemeProvider>
     </React.StrictMode>,
 )

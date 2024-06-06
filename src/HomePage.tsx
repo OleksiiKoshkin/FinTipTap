@@ -1,13 +1,19 @@
 import './App.css'
-import {Typography} from "@mui/material";
 import {TextEditor} from "./components/text-editor/Editor.tsx";
-import {useCallback, useState} from "react";
-import {StyledCode, StyledExample, StyledTab, StyledTabList, StyledTabPanel} from "./App.styled.tsx";
+import React, {useCallback, useState} from "react";
+import {
+    StyledCode,
+    StyledEditorContainer,
+    StyledExample,
+    StyledTab,
+    StyledTabList,
+    StyledTabPanel
+} from "./App.styled.tsx";
 import {content} from "./content.ts";
 import TabContext from '@mui/lab/TabContext';
+import {MainMenu} from "./MainMenu.tsx";
 
-
-function App() {
+export const HomePage: React.FC = () => {
     const [text, setText] = useState(content);
 
     const updateText = useCallback((text: string) => {
@@ -22,11 +28,11 @@ function App() {
 
     return (
         <>
-            <Typography variant="h3" gutterBottom>
-                FinTipTap Editor Demo
-            </Typography>
+            <MainMenu/>
 
-            <TextEditor text={text} setText={updateText}/>
+            <StyledEditorContainer>
+                <TextEditor text={text} setText={updateText}/>
+            </StyledEditorContainer>
 
             <TabContext value={value}>
                 <StyledTabList onChange={handleChange} centered>
@@ -50,5 +56,3 @@ function App() {
         </>
     )
 }
-
-export default App

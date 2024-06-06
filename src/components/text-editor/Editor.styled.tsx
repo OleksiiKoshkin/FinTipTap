@@ -1,17 +1,13 @@
 import {Box, styled} from "@mui/material";
 
 export const StyledEditor = styled(Box)`
-    min-width: 700px;
-    max-width: 700px;
-    min-height: 400px;
-    border: 1px solid ${({theme}) => theme.palette.divider};
-    background-color: #fff;
-    border-radius: 8px;
     text-align: left;
     display: flex;
     flex-flow: column nowrap;
     line-height: 1;
     position: relative;
+
+    flex-grow: 2;
 
     .MuiButtonBase-root:focus {
         focus-ring: none;

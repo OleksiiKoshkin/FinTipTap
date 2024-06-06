@@ -39,6 +39,17 @@ export const StyledTabPanel = styled(TabPanel)`
     width: 700px;
 `
 
+export const StyledEditorContainer = styled('div')`
+    display: flex;
+    max-width: 1100px;
+    width: 100vw;
+    min-height: 400px;
+    border: 1px solid ${({theme}) => theme.palette.divider};
+    background-color: #fff;
+    border-radius: 8px;
+    flex-flow: row wrap;
+`
+
 export const StyledCode = styled('div')`
     text-align: left;
     width: 100%;
@@ -71,5 +82,43 @@ export const StyledExample = styled('div')`
     p:has(img) > img {
         float: none;
         display: flex;
+    }
+`
+
+export const StyledMainMenu = styled('div')`
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin-bottom: 4em;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        margin: 0 4px;
+        display: flex;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #059dde;
+        font-size: 12px;
+        transition: 0.3s all ease-in-out;
+
+        &:before, &:after {
+            content: '-';
+            display: inline;
+            color: transparent;
+            height: 0 !important;
+        }
+
+        &:hover {
+            color: #00668f;
+        }
+
+        &.active {
+            color: #ffa600;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 4px;
+        }
     }
 `

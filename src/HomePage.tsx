@@ -9,12 +9,12 @@ import {
     StyledTabList,
     StyledTabPanel
 } from "./App.styled.tsx";
-import {content} from "./content.ts";
+import {content1} from "./content.ts";
 import TabContext from '@mui/lab/TabContext';
 import {MainMenu} from "./MainMenu.tsx";
 
 export const HomePage: React.FC = () => {
-    const [text, setText] = useState(content);
+    const [text, setText] = useState(content1);
 
     const updateText = useCallback((text: string) => {
         setText(text)
@@ -42,7 +42,7 @@ export const HomePage: React.FC = () => {
 
                 <StyledTabPanel value="1">
                     <StyledExample>
-                        <div dangerouslySetInnerHTML={{__html: text}}/>
+                        <div className={'div-html'} dangerouslySetInnerHTML={{__html: text}}/>
                     </StyledExample>
                 </StyledTabPanel>
 

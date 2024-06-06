@@ -28,6 +28,7 @@ import Highlight from '@tiptap/extension-highlight'
 import {ImageResize} from "./extensions/image/ImageResize.ts";
 import {handleImageDrop} from "./extensions/image/drop-image.ts";
 import {handleImagePaste} from "./extensions/image/paste-image.ts";
+import React from "react";
 
 const extensions = [
     StarterKit.configure({
@@ -88,11 +89,19 @@ const extensions = [
     TableCell,
     // Custom TableCell with backgroundColor attribute
     // CustomTableCell,
-    Highlight.configure({ multicolor: true })
+    Highlight.configure({multicolor: true})
 ]
 
-export const TextEditor = ({text, setText}: { text: string, setText: (text: string) => void }) => {
-    return <StyledEditor>
+export type EditorMode = 'embed' | 'overflow'
+
+export type TextEditorProps = {
+    text: string
+    setText: (text: string) => void
+    mode?: EditorMode
+}
+
+export const TextEditor: React.FC<TextEditorProps> = ({text, setText, mode = 'embed'}) => {
+    return <StyledEditor mode={mode}>
         <EditorProvider
             extensions={extensions}
             content={text}
@@ -103,7 +112,7 @@ export const TextEditor = ({text, setText}: { text: string, setText: (text: stri
                 handleDrop: handleImageDrop,
                 handlePaste: handleImagePaste
             }}
-            slotBefore={<MenuBar/>}
+            slotBefore={<MenuBar mode={mode}/>}
         />
     </StyledEditor>
 }

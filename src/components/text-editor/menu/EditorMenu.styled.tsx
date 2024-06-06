@@ -1,6 +1,9 @@
 import {Box, Button, ButtonGroup, styled} from "@mui/material";
+import {EditorMode} from "../Editor.tsx";
 
-export const StyledEditorMenuContainer = styled(Box)`
+export const StyledEditorMenuContainer = styled(Box, {
+    shouldForwardProp: (prop) => prop !== "mode"
+})<{ mode?: EditorMode }>`
     background-color: #f2f2f2;
     gap: 4px;
     padding: 4px;
@@ -9,6 +12,10 @@ export const StyledEditorMenuContainer = styled(Box)`
     align-items: center;
     justify-content: flex-start;
     border-radius: 8px 8px 0 0;
+    position: ${({mode}) => mode === 'overflow' ? 'absolute' : 'relative'};
+    transform: ${({mode}) => mode === 'overflow' ? 'translateY(calc(-100% - 8px))' : 'none'};
+
+    box-shadow: ${({mode}) => mode === 'overflow' ? '0 0 0 8px #fff, 0 -2px 0 8px #ffa60050, -2px -1px 0 8px #ffa60050, 2px -1px 0 8px #ffa60050' : 'none'};
 
     input[type=color] {
         border-color: #f2f2f2;

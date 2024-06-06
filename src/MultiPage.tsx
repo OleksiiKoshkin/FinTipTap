@@ -1,22 +1,35 @@
 import './App.css'
-import {TextEditor} from "./components/text-editor/Editor.tsx";
-import React, {useCallback, useState} from "react";
-import {content} from "./content.ts";
+import React from "react";
 import {MainMenu} from "./MainMenu.tsx";
+import {ReplaceableEditor} from "./ReplaceableEditorComponent.tsx";
+import {Typography} from "@mui/material";
+import {StyledMultiContainer1, StyledMultiContainer2, StyledMultiContainer3} from "./App.styled.tsx";
 
 
 export const MultiPage: React.FC = () => {
-    const [text, setText] = useState(content);
-
-    const updateText = useCallback((text: string) => {
-        setText(text)
-    }, [setText])
-
     return (
         <>
             <MainMenu/>
 
-            <TextEditor text={text} setText={updateText}/>
+            <StyledMultiContainer1>
+                <ReplaceableEditor/>
+                <ReplaceableEditor/>
+            </StyledMultiContainer1>
+
+            <StyledMultiContainer2>
+                <ReplaceableEditor/>
+                <ReplaceableEditor/>
+            </StyledMultiContainer2>
+
+            <StyledMultiContainer3>
+                <ReplaceableEditor/>
+                <ReplaceableEditor/>
+                <ReplaceableEditor/>
+            </StyledMultiContainer3>
+
+            <Typography variant="body2" color="textSecondary">
+                Click to text container to start editing. Click outside to stop editing.
+            </Typography>
         </>
     )
 }

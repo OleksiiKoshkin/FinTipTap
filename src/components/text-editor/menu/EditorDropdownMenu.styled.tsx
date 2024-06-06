@@ -15,12 +15,11 @@ export const StyledMenuButton = styled(Button, {
 
     &.MuiButtonBase-root {
         border: none;
-        padding: 2px 6px;
+        padding: 2px 0;
         text-transform: none;
         min-width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
         max-width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
         width: ${({iconOnly, short}) => getButtonSize(iconOnly, short)};
-        justify-content: space-between;
         overflow: hidden;
         border-radius: 4px;
         position: relative;
@@ -29,10 +28,14 @@ export const StyledMenuButton = styled(Button, {
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            text-align: left;
             display: block;
             padding-right: 16px;
-            padding-left: 2px;
+            padding-left: 6px;
+            text-align: center;
+        }
+
+        & > svg {
+            margin-left: ${({iconOnly}) => iconOnly ? '-10px' : '0'};
         }
 
         span {

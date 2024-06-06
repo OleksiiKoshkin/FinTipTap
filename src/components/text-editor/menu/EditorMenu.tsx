@@ -15,8 +15,14 @@ import {StyledEditorMenuContainer} from "./EditorMenu.styled.tsx";
 import {EditorMenuFontSize} from "./items/EditorMenuFontSize.tsx";
 import {EditorMenuTable} from "./items/table/EditorMenuTable.tsx";
 import {EditorMenuHighlight} from "./items/EditorMenuHighlight.tsx";
+import {EditorMode} from "../Editor.tsx";
+import React from "react";
 
-export const MenuBar = () => {
+export type MenuBarProps = {
+    mode: EditorMode
+}
+
+export const MenuBar: React.FC<MenuBarProps> = ({mode}) => {
     const {editor} = useCurrentEditor()
     if (!editor) {
         return null
@@ -24,7 +30,7 @@ export const MenuBar = () => {
 
     return (
         <EditorMenuContext.Provider value={{editor}}>
-            <StyledEditorMenuContainer>
+            <StyledEditorMenuContainer mode={mode}>
                 <EditorMenuUndoRedo/>
 
                 <EditorMenuFontStyles/>

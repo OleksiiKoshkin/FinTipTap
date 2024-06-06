@@ -1,12 +1,13 @@
 import React from "react";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import {MenuItem} from "@mui/material";
+import {Divider, MenuItem} from "@mui/material";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import {StyledMenu, StyledMenuButton} from "../../EditorDropdownMenu.styled.tsx";
 import {InsertImage} from "./InsertImage.tsx";
 import {EditorActionMenuItem} from "../abstract-action/EditorActionMenuItem.tsx";
 import HorizontalRuleOutlinedIcon from "@mui/icons-material/HorizontalRuleOutlined";
 import TableChartOutlinedIcon from "@mui/icons-material/TableChartOutlined";
+import {InsertURL} from "./InsertURL.tsx";
 
 export type InsertMenuItemProps = {
     onExecute: () => void
@@ -44,12 +45,15 @@ export const EditorMenuAdd: React.FC = () => {
                     <InsertImage onExecute={handleClose}/>
                 </MenuItem>
 
+                <Divider/>
+
                 <EditorActionMenuItem
                     onExecute={handleClose}
                     actionName={'setHorizontalRule'}>
                     <HorizontalRuleOutlinedIcon/>
                     Insert horizontal rule
                 </EditorActionMenuItem>
+                <Divider/>
 
                 <EditorActionMenuItem
                     onExecute={handleClose}
@@ -58,6 +62,12 @@ export const EditorMenuAdd: React.FC = () => {
                     <TableChartOutlinedIcon/>
                     Insert table
                 </EditorActionMenuItem>
+
+                <Divider/>
+
+                <MenuItem disableRipple>
+                    <InsertURL onExecute={handleClose}/>
+                </MenuItem>
             </StyledMenu>
         </>
     )

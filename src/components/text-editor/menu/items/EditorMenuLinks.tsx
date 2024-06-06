@@ -12,7 +12,7 @@ export const EditorMenuLinks: React.FC = () => {
             return
         }
 
-        const previousUrl = editor!.getAttributes('link').href
+        const previousUrl = editor.getAttributes('link').href
         const url = window.prompt('URL', previousUrl)
 
         // cancelled
@@ -22,14 +22,14 @@ export const EditorMenuLinks: React.FC = () => {
 
         // empty
         if (url === '') {
-            editor!.chain().focus().extendMarkRange('link').unsetLink()
+            editor.chain().focus().extendMarkRange('link').unsetLink()
                 .run()
 
             return
         }
 
         // update link
-        editor!.chain().focus().extendMarkRange('link').setLink({href: url})
+        editor.chain().focus().extendMarkRange('link').setLink({href: url})
             .run()
     }, [editor])
 

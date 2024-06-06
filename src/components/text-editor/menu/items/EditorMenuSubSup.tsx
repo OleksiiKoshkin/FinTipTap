@@ -12,18 +12,6 @@ export const EditorMenuSubSup: React.FC = () => {
     return (
         <StyledEditorMenuGroup>
             <StyledButton
-                onClick={() => editor.chain().focus().toggleSubscript().run()}
-                variant={editor.isActive('subscript') ? 'contained' : 'outlined'}
-                disabled={
-                    !editor.can()
-                        .chain()
-                        .focus()
-                        .toggleSubscript()
-                        .run()
-                }>
-                <SubscriptOutlinedIcon/>
-            </StyledButton>
-            <StyledButton
                 onClick={() => editor.chain().focus().toggleSuperscript().run()}
                 variant={editor.isActive('superscript') ? 'contained' : 'outlined'}
                 disabled={
@@ -35,6 +23,20 @@ export const EditorMenuSubSup: React.FC = () => {
                 }>
                 <SuperscriptOutlinedIcon/>
             </StyledButton>
+
+            <StyledButton
+                onClick={() => editor.chain().focus().toggleSubscript().run()}
+                variant={editor.isActive('subscript') ? 'contained' : 'outlined'}
+                disabled={
+                    !editor.can()
+                        .chain()
+                        .focus()
+                        .toggleSubscript()
+                        .run()
+                }>
+                <SubscriptOutlinedIcon/>
+            </StyledButton>
+
 
         </StyledEditorMenuGroup>
     )

@@ -12,7 +12,7 @@ import {ReplacePage} from "./ReplacePage.tsx";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "",
         element: <HomePage/>,
         index: true,
         errorElement: <ErrorPage/>,
@@ -20,7 +20,22 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <HomePage/>,
-        errorElement: <ErrorPage/>,
+    },
+    {
+        path: "FinTipTap",
+        element: <HomePage/>,
+    },
+    {
+        path: "/FinTipTap",
+        element: <HomePage/>,
+    },
+    {
+        path: "/FinTipTap/",
+        element: <HomePage/>,
+    },
+    {
+        path: "/FinTipTap/home",
+        element: <HomePage/>,
     },
     {
         path: "/home",

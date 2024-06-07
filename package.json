@@ -42,6 +42,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "showdown": "^2.1.0",
+    "@types/showdown": "^2.0.6",
     "tiptap-extension-resize-image": "^1.1.7"
   },
   "devDependencies": {

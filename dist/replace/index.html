@@ -6,17 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>FinTipTap Demo - redirect</title>
     <style>
+        body, html {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        h4 {
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
         #bad-init {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-100%);
+            text-align: center;
+        }
+        a, a:visited {
+            background-color: #ffab00;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all .1s ease-in-out;
+            display: block;
+        }
+        a:hover, a:focus {
+            background-color: #ffac00;
+            text-decoration: none;
+            transform: scale(1.1);
+            box-shadow: 0 2px 12px #ffac00aa;
+        }
+        p.remark {
+            color: silver;
+            font-size: .7rem;
+            margin-top: 3rem;
         }
     </style>
     <base href="https://oleksiikoshkin.github.io/FinTipTap/dist/">
 </head>
 <body>
-<div id="bad-init"><a href="https://oleksiikoshkin.github.io/FinTipTap/dist/">Use this link to open SPA (replace)</a></div>
+<div id="bad-init">
+    <h4>
+        Overlays
+    </h4>
+    <p>
+        <a href="https://oleksiikoshkin.github.io/FinTipTap/dist/">Click here to open SPA</a>
+    </p>
+    <p class="remark">
+        You will be redirected automatically in one sec
+    </p>
+</div>
 <script>
     setTimeout(() => {
         window.location.href = "https://oleksiikoshkin.github.io/FinTipTap/dist/"

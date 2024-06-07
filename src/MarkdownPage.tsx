@@ -7,7 +7,7 @@ import {StyledCode, StyledExample, StyledReplaceContainer} from "./App.styled.ts
 import {TextEditor} from "./components/text-editor/Editor.tsx";
 import {ClickAwayListener} from '@mui/base/ClickAwayListener';
 
-import * as showdown from 'showdown';
+import showdown from 'showdown';
 
 export const MarkdownPage: React.FC = () => {
     const [maybeMarkdown, setMaybeMarkdown] = useState(markdown1);

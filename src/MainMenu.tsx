@@ -5,7 +5,7 @@ import {StyledMainMenu} from "./App.styled.tsx";
 export const MainMenu: React.FC = () => {
     return <StyledMainMenu>
         <NavLink to={'/home'}>Standalone</NavLink>
-        <NavLink to={'/replace'}>Replace</NavLink>
-        <NavLink to={'/multi'}>Multiple</NavLink>
+        <NavLink to={'/replace'}>Overlay</NavLink>
+        <NavLink to={'/multi'}>Multiple overlays</NavLink>
     </StyledMainMenu>
 }

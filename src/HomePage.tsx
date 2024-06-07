@@ -36,7 +36,7 @@ export const HomePage: React.FC = () => {
 
             <TabContext value={value}>
                 <StyledTabList onChange={handleChange} centered>
-                    <StyledTab label="HTML" value="1"/>
+                    <StyledTab label="HTML preview" value="1"/>
                     <StyledTab label="Source" value="2"/>
                 </StyledTabList>
 

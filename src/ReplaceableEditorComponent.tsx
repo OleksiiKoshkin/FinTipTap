@@ -21,7 +21,7 @@ export const ReplaceableEditor: React.FC = () => {
                 <StyledMultiContainer onClick={() => setEditing(true)}>
                     {editing && <TextEditor
                         text={text}
-                        mode={'overflow'}
+                        mode={'overlay'}
                         setText={updateText}/>}
                     {!editing && <div className={'div-html'} dangerouslySetInnerHTML={{__html: text}}/>}
                 </StyledMultiContainer>

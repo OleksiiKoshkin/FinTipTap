@@ -79,7 +79,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <ThemeProvider theme={theme}>
             <Typography variant="h2" gutterBottom>
-                FinTipTap Editor Demo
+                Fin|TipTap Editor Demo
             </Typography>
             <RouterProvider router={router}/>
         </ThemeProvider>

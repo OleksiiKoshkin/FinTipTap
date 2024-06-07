@@ -43,10 +43,10 @@ export const StyledEditor = styled('div', {
     div[contenteditable = true] {
         position: static;
         flex-grow: 2;
-        padding: ${({mode}) => mode === 'overflow' ? '0' : '6px 12px'};
-        box-shadow: ${({mode}) => mode === 'overflow' ? '0 0 0 8px #fff, 0 0 0 10px #ffa60050' : 'none'};
-        border-radius: ${({mode}) => mode === 'overflow' ? '0 0 8px 8px' : 0};
-        overflow-y: ${({mode}) => mode === 'overflow' ? 'auto' : 'visible'};
+        padding: ${({mode}) => mode === 'overlay' ? '0' : '6px 12px'};
+        box-shadow: ${({mode}) => mode === 'overlay' ? '0 0 0 8px #fff, 0 0 0 10px #ffa60050' : 'none'};
+        border-radius: ${({mode}) => mode === 'overlay' ? '0 0 8px 8px' : 0};
+        overflow-y: ${({mode}) => mode === 'overlay' ? 'auto' : 'visible'};
     }
 
     .is-editor-empty:first-of-type::before {

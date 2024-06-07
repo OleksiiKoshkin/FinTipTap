@@ -5,7 +5,9 @@ export const ImageResize = Image.extend({
         return {
             inline: true,
             allowBase64: true,
-            HTMLAttributes: {}
+            HTMLAttributes: {
+                class: 'tiptap-image-resize',
+            }
         }
     },
     addAttributes() {
@@ -20,9 +22,10 @@ export const ImageResize = Image.extend({
                 default: 'cursor: pointer;',
                 parseHTML: element => {
                     const width = element.getAttribute('width');
-                    return width
-                        ? `width: ${width}px; height: auto; cursor: pointer;`
-                        : `${element.style.cssText}`;
+                    const height = element.getAttribute('height');
+                    const cssText = element.style.cssText
+
+                    return cssText.includes('width') ? cssText : `width: ${width}px; height: ${height ? height + 'px' : 'auto'};`
                 },
             },
             title: {
@@ -94,6 +97,7 @@ export const ImageResize = Image.extend({
                 options: {editable},
             } = editor;
             const {style} = node.attrs;
+
             const $wrapper = document.createElement('div');
             const $container = document.createElement('div');
             const $img = document.createElement('img');
@@ -213,7 +217,7 @@ export const ImageResize = Image.extend({
 
                 $container.setAttribute(
                     'style',
-                    `position: relative; ${selectedImageStyle} ${style} cursor: pointer;`,
+                    `position: relative; ${selectedImageStyle} ${style}`,
                     //`position: relative; border: 1px dashed #ffa600; ${style} cursor: pointer;`,
                 );
 

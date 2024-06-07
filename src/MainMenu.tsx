@@ -7,5 +7,6 @@ export const MainMenu: React.FC = () => {
         <NavLink to={'/home'}>Standalone</NavLink>
         <NavLink to={'/replace'}>Overlay</NavLink>
         <NavLink to={'/multi'}>Multiple overlays</NavLink>
+        <NavLink to={'/markdown'}>Markdown</NavLink>
     </StyledMainMenu>
 }

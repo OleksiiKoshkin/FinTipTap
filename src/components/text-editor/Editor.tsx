@@ -92,7 +92,7 @@ const extensions = [
     Highlight.configure({multicolor: true})
 ]
 
-export type EditorMode = 'embed' | 'overflow'
+export type EditorMode = 'standalone' | 'overlay'
 
 export type TextEditorProps = {
     text: string
@@ -100,7 +100,7 @@ export type TextEditorProps = {
     mode?: EditorMode
 }
 
-export const TextEditor: React.FC<TextEditorProps> = ({text, setText, mode = 'embed'}) => {
+export const TextEditor: React.FC<TextEditorProps> = ({text, setText, mode = 'standalone'}) => {
     return <StyledEditor mode={mode}>
         <EditorProvider
             extensions={extensions}

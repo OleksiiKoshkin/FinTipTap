@@ -12,10 +12,10 @@ export const StyledEditorMenuContainer = styled(Box, {
     align-items: center;
     justify-content: flex-start;
     border-radius: 8px 8px 0 0;
-    position: ${({mode}) => mode === 'overflow' ? 'absolute' : 'relative'};
-    transform: ${({mode}) => mode === 'overflow' ? 'translateY(calc(-100% - 8px))' : 'none'};
+    position: ${({mode}) => mode === 'overlay' ? 'absolute' : 'relative'};
+    transform: ${({mode}) => mode === 'overlay' ? 'translateY(calc(-100% - 8px))' : 'none'};
 
-    box-shadow: ${({mode}) => mode === 'overflow' ? '0 0 0 8px #fff, 0 -2px 0 8px #ffa60050, -2px -1px 0 8px #ffa60050, 2px -1px 0 8px #ffa60050' : 'none'};
+    box-shadow: ${({mode}) => mode === 'overlay' ? '0 0 0 8px #fff, 0 -2px 0 8px #ffa60050, -2px -1px 0 8px #ffa60050, 2px -1px 0 8px #ffa60050' : 'none'};
 
     input[type=color] {
         border-color: #f2f2f2;

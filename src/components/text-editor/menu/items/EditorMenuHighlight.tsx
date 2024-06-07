@@ -8,9 +8,9 @@ import {Divider, MenuItem} from "@mui/material";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 
 const availableColors = [
-    '#a386f6',
-    '#b197fc',
-    '#bcaffa',
+    '#aabcf6',
+    '#bdd1f6',
+    '#dbe2ff',
     '#fa9797',
     '#ffa8a8',
     '#fcbbbb',

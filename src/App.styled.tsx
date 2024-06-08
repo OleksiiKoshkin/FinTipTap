@@ -61,7 +61,7 @@ export const StyledReplaceContainer = styled('div')`
     margin-bottom: 2em;
     position: relative;
     padding: 6px;
-    
+
     div.div-html {
         width: 100%;
         height: 100%;
@@ -76,7 +76,8 @@ export const StyledReplaceContainer = styled('div')`
         p:has(img) > img {
             float: none;
             display: flex;
-        }    }
+        }
+    }
 `
 
 export const StyledMultiContainer = styled('div')`

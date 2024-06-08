@@ -519,7 +519,7 @@ img.ProseMirror-separator {
     margin-bottom: 2em;
     position: relative;
     padding: 6px;
-    
+
     div.div-html {
         width: 100%;
         height: 100%;
@@ -534,7 +534,8 @@ img.ProseMirror-separator {
         p:has(img) > img {
             float: none;
             display: flex;
-        }    }
+        }
+    }
 `,UH=J("div")`
     display: flex;
     background-color: #f0f0f4;

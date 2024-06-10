@@ -6,6 +6,7 @@ import {StyledHighlightDropdown, StyledHLItem} from "./EditorMenuHighlight.style
 import {Divider, MenuItem} from "@mui/material";
 import {textColors} from "./text-colors.tsx";
 import {ColorIcon} from "./ColorIcon.tsx";
+import {rgbStyleToHex} from "./utils.ts";
 
 export const EditorMenuTextColor: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -40,7 +41,7 @@ export const EditorMenuTextColor: React.FC = () => {
         return null;
     }
 
-    const currentColor = editor.getAttributes('textStyle').color || '#000000';
+    const currentColor = rgbStyleToHex(editor.getAttributes('textStyle').color || '#000000');
     const currentColorByCode = textColors.find((color) => color === currentColor)
 
     return (

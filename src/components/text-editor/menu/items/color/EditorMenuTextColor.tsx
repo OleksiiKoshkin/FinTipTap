@@ -1,31 +1,13 @@
 import React, {useCallback, useContext} from "react";
-import {EditorMenuContext} from "../EditorMenuContext.tsx";
+import {EditorMenuContext} from "../../EditorMenuContext.tsx";
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
-import {StyledMenu, StyledMenuButton} from "../EditorDropdownMenu.styled.tsx";
-import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
+import {StyledMenu, StyledMenuButton} from "../../EditorDropdownMenu.styled.tsx";
 import {StyledHighlightDropdown, StyledHLItem} from "./EditorMenuHighlight.styled.tsx";
 import {Divider, MenuItem} from "@mui/material";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
+import {textColors} from "./text-colors.tsx";
+import {ColorIcon} from "./ColorIcon.tsx";
 
-const availableColors = [
-    '#aabcf6',
-    '#bdd1f6',
-    '#dbe2ff',
-    '#fa9797',
-    '#ffa8a8',
-    '#fcbbbb',
-    '#fcc384',
-    '#facc97',
-    '#ffe0bc',
-    '#ffec71',
-    '#fff8a8',
-    '#faf6c5',
-    '#8eff78',
-    '#b8ffa8',
-    '#d8ffcf',
-] as const
-
-export const EditorMenuHighlight: React.FC = () => {
+export const EditorMenuTextColor: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
@@ -44,12 +26,12 @@ export const EditorMenuHighlight: React.FC = () => {
             return;
         }
         // @todo: select word under cursor
-        editor.chain().focus().toggleHighlight({color: color}).run()
+        editor.chain().focus().setColor(color || '#000000').run()
         handleClose()
     }, [editor])
 
     const handleReset = useCallback(() => {
-        editor?.chain().focus().unsetHighlight().run()
+        editor?.chain().focus().unsetColor().run()
         handleClose()
     }, [editor])
 
@@ -58,7 +40,8 @@ export const EditorMenuHighlight: React.FC = () => {
         return null;
     }
 
-    const currentColor = availableColors.find((color) => editor.isActive('highlight', {color})) || 'transparent'
+    const currentColor = editor.getAttributes('textStyle').color || '#000000';
+    const currentColorByCode = textColors.find((color) => color === currentColor)
 
     return (
         <>
@@ -68,8 +51,7 @@ export const EditorMenuHighlight: React.FC = () => {
                 iconOnly={true}
                 endIcon={<KeyboardArrowDownOutlinedIcon/>}
             >
-                <DriveFileRenameOutlineOutlinedIcon
-                    sx={{background: currentColor, borderRadius: '50%', padding: '2px'}}/>
+                <ColorIcon color={currentColorByCode} icon={'text'}/>
             </StyledMenuButton>
             <StyledMenu
                 anchorEl={anchorEl}
@@ -77,14 +59,13 @@ export const EditorMenuHighlight: React.FC = () => {
                 onClose={handleClose}
             >
                 <StyledHighlightDropdown>
-                    {availableColors.map((color) => {
-                        const active = editor.isActive('highlight', {color})
+                    {textColors.map((color) => {
+                        const active = color === currentColorByCode;
                         return <StyledHLItem
                             onClick={() => handleHighlight(color)}
                             key={color}
                             highlight={color}
                             active={active}>
-                            {active && <CheckOutlinedIcon/>}
                         </StyledHLItem>
                     })}
                 </StyledHighlightDropdown>
@@ -92,7 +73,7 @@ export const EditorMenuHighlight: React.FC = () => {
 
                 <MenuItem
                     onClick={handleReset} disableRipple>
-                    Remove highlighting
+                    Remove color
                 </MenuItem>
 
             </StyledMenu>

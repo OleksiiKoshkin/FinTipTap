@@ -17,6 +17,7 @@ import {EditorMenuHighlight} from "./items/color/EditorMenuHighlight.tsx";
 import {EditorMode} from "../Editor.tsx";
 import React from "react";
 import {EditorMenuTextColor} from "./items/color/EditorMenuTextColor.tsx";
+import {EditorMenuEmojis} from "./items/emodji/EditorMenuEmojis.tsx";
 
 export type MenuBarProps = {
     mode: EditorMode
@@ -32,6 +33,8 @@ export const MenuBar: React.FC<MenuBarProps> = ({mode}) => {
         <EditorMenuContext.Provider value={{editor}}>
             <StyledEditorMenuContainer mode={mode}>
                 <EditorMenuUndoRedo/>
+
+                <EditorMenuEmojis/>
 
                 <EditorMenuFontStyles/>
 

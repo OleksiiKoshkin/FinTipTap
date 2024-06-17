@@ -9,7 +9,6 @@ import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {ErrorPage} from "./ErrorPage.tsx";
 import {MultiPage} from "./MultiPage.tsx";
 import {ReplacePage} from "./ReplacePage.tsx";
-import {MarkdownPage} from "./MarkdownPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -61,10 +60,6 @@ const router = createBrowserRouter([
     {
         path: "/multi",
         element: <MultiPage/>,
-    },
-    {
-        path: "/markdown",
-        element: <MarkdownPage/>,
     },
 ]);
 

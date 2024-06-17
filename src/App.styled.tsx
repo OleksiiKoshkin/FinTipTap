@@ -179,6 +179,14 @@ export const StyledMainMenu = styled('div')`
             text-underline-offset: 4px;
         }
     }
+    &:not(:has(a.active)) {
+        a:first-of-type {
+            color: #ffa600;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 4px;
+        }
+    }
 `
 
 export const StyledMultiContainer1 = styled('div')`

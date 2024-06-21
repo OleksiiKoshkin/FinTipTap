@@ -1,7 +1,9 @@
-export const supportedImageTypes = ['image/jpeg', 'image/png', 'image/svg']
+export const supportedBitmapTypes = ['image/jpeg', 'image/png']
+
+export const supportedVectorTypes = ['image/svg', 'image/svg+xml']
+
+export const supportedImageTypes = [...supportedBitmapTypes, ...supportedVectorTypes]
 
 export const supportedImageTypeNames = ['JPEG', 'PNG', 'SVG']
 
-export const MAX_FILE_SIZE_IN_MB = 1
-
-export const MAX_IMAGE_SIZE = 1000
+export const MAX_IMAGE_SIZE = 1500
